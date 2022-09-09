@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react'
 import { useSelector } from 'react-redux'
-import { useNavigate } from 'react-router-dom'
+
 import { setAdddCrud,setEditCrud } from '../reducer/CrudSlice'
 
 const Form = ({dispatch,showEdit,setEhowEdit}) => {
@@ -10,7 +10,7 @@ const Form = ({dispatch,showEdit,setEhowEdit}) => {
   const RefTitel = useRef(null)
   const RefDisc = useRef(null)
 
-const navigate = useNavigate()
+
 
 
 useEffect(()=>{
