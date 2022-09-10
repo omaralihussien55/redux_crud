@@ -26,16 +26,22 @@ useEffect(()=>{
     const HandleSubmitAdd= (e)=>{
 
    e.preventDefault()
-   let crud = {
-    _id: crudArray.length + 1,
-    title:titel,
-    discription:disc
-   }
+  
+   if(titel=="" || disc =="" ){
 
-   dispatch(setAdddCrud(crud))
+   }else{
+    let crud = {
+      _id: crudArray.length + 1,
+      title:titel,
+      discription:disc
+     }
+  
+     dispatch(setAdddCrud(crud))
+     setTitel("")
+     setDisc("")
+   }
    setEhowEdit(false)
-   setTitel("")
-   setDisc("")
+
   // dispatch(addCrud(crud))
   
 
@@ -43,6 +49,8 @@ useEffect(()=>{
 
    const  HandleSubmitEdit = (e)=>{
     e.preventDefault()
+
+  
 let item =crudArray.length >= 1&& crudArray.map((i)=>{
   if(i._id === Detailscrud._id ){
     console.log("true")
