@@ -7,8 +7,7 @@ const Form = ({dispatch,showEdit,setEhowEdit}) => {
   const {Detailscrud,crudArray} = useSelector((state)=> state.crud)
   const [titel,setTitel ] = useState( Detailscrud.title )
   const [disc,setDisc ] = useState( Detailscrud.discription )
-  const RefTitel = useRef(null)
-  const RefDisc = useRef(null)
+
 
 
 
@@ -79,8 +78,8 @@ setTitel("")
          <h2 className={showEdit?'p-1 text-center text-success':'p-1 text-center text-primary'}>{showEdit?"Edit Crud":"Add Crud"}</h2>
          <form onSubmit={!showEdit ?HandleSubmitAdd:HandleSubmitEdit} >
             <div className='col col-12 col-md-10 p-2'>
-              <input type={'text'} ref={RefTitel}  onChange={(e)=> setTitel(e.target.value)} value={titel} placeholder="name project" className='form-control mb-2' />
-              <input type={'text'} ref={RefDisc}  onChange={(e)=> setDisc(e.target.value)} value={disc} placeholder="description" className='form-control mb-2' />
+              <input type={'text'}  onChange={(e)=> setTitel(e.target.value)} value={titel} placeholder="name project" className='form-control mb-2' />
+              <input type={'text'}   onChange={(e)=> setDisc(e.target.value)} value={disc} placeholder="description" className='form-control mb-2' />
           {
             !showEdit ? <input  type={'submit'} value="add Project" onSubmit={HandleSubmitAdd} className='btn btn-primary'/>:
             <input  type={'submit'} value="edit Project" onSubmit={HandleSubmitEdit} className='btn btn-success'/>
